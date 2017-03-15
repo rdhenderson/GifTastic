@@ -1,9 +1,9 @@
 
-button,
-div,
-form,
-input {
-  margin: 10px;
+.animal-btn {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size:14px;
 }
 
 .gif {

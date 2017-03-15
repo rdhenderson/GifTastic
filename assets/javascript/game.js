@@ -12,18 +12,18 @@ function renderButtons() {
   for (var i = 0; i<searched.length; i++) {
       var newBtn = $("<input>");
       newBtn.attr("value", searched[i]);
-      newBtn.attr("class", "btn btn- btn-primary");
+      newBtn.attr("class", "btn btn-sm btn-primary animal-btn");
       newBtn.click(displayGifs);
       $("#gif-buttons").append(newBtn);
   }
 }        
 
-function displayGifs(){
+function displayGifs() {
   $("#gif-view").empty();
   // console.log(animalGifs);
   // console.log("search array" + searched);
+  
   var animal = $(this).val();
-  var imgListItem = 
  
   console.log("showing animal: " + animal + " " + animalGifs);
   var gifView = $("#gif-view");
@@ -72,12 +72,14 @@ function gifAnimateToggle() {
     $(this).attr("src", $(this).attr("data-animate"));
   }
 }
+
 $("#clear").click(function(){
   $("#gif-view").empty();
   $("#gif-buttons").empty();
   searched = [];
   animalGifs = {};
 });
+
 
 // This function handles events where one button is clicked
 $("#add-gif").on("click", function() {
@@ -106,7 +108,11 @@ $("#add-gif").on("click", function() {
       alert("Duplicate Search");
     }
   });
- 
+});
+
+//put focus on the search bar
+$(document).ready(function() { 
+  $("#gif-input").focus(); 
 });
 
 

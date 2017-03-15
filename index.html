@@ -25,26 +25,42 @@
 </head>
 
 <body>
-   <div class="container">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h2 class="navbar-text">Find The Fun</h2>
+    </div>
+    
+    <form id="gif-form" class="navbar-form navbar-right" role="search">
 
-
-      <form id="gif-form" class="navbar-form navbar-right" role="search">
-      <div class="form-group">
-        <input id="gif-input" type="text" class="form-control" placeholder="Search">
+        <input id="gif-input" type="text" class="form-control" placeholder="Anything But Cats" aria-describedby="sizing-addon1">
+       
+       <div class="input-group input-group-md">
+        <span class="input-group-btn">
+          <button id="add-gif" type="submit" class="btn btn-success">Add An Animal</button>
+        </span>
+        <span class="input-group-btn">
+          <button id="clear" type="submit" class="btn btn-danger">Clear</button>
+        </span>
       </div>
-      <button id="add-gif" type="submit" class="btn btn-success">Add An Animal</button>
-      <button id="clear" type="submit" class="btn btn-danger">Clear</button>
+
+
     </form>
   </div>
-  <div class="container">
-    
-      <!-- Button triggers new movie to be added -->
+</nav>
 
-   
-    <h1>Animal Search</h1>
+
+<div class="container">
+    <div id="gif-buttons" class="page-header">
+      <!-- SEARCH BUTTONS GO HERE -->
+    </div>
+</div>   
+       
+     
+  <div class="container">
+  
     
     <!-- GIFS will get dumped here -->
-    <div id="gif-buttons"></div>
     <div id="gif-view"></div>
 
 
