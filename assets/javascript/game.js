@@ -91,7 +91,7 @@ $("#add-gif").on("click", function() {
   //clear the input box
   $("#gif-input").val("");
 
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchPhrase + "&limit=10&api_key=dc6zaTOxFJmzC";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchPhrase + "&limit=10&api_key=dc6zaTOxFJmzC";
 
   $.ajax({
     url: queryURL, 
@@ -99,10 +99,14 @@ $("#add-gif").on("click", function() {
   }).done(function(response){
     var results = response.data;
     console.log(results);
+    //Confirm that search term is not a duplicate
     if(!(animalSearch in animalGifs)) {
       searched.push(animalSearch);
+      //Add results to gifs object with search term as key
       animalGifs[animalSearch] = results;
+      //Redraw buttons
       renderButtons();
+      //Trigger a click event for new search to display results on page after search
       $('input[value="'+animalSearch+'"]').trigger("click");    
     } else {
       alert("Duplicate Search");
